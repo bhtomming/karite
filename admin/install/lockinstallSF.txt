@@ -1,0 +1,1 @@
+请删除admin/install/lockinstall.txt文件后再进行安装

@@ -1,0 +1,89 @@
+{% extends 'admin/ueditorbase.twig' %}
+{% block content %}
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        {{ pagename }}
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="/admin">管理首页</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-list"></i> <a href="/admin/{{ page }}" >文章列表</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-edit"></i>添加文章
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- Page Heading -->
+            <div class="row">
+                <form name="article" class="form-horizontal" action="{{ action }}" method="post">
+                    <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="title" contenteditable="true">标题</label>
+                                <div class="col-sm-8">
+                                    <input name="title" id="title" class="form-control" placeholder="标题" type="text" value="{{ news.title ? news.title : "" }}">
+                                </div>
+                            </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">标题图片</label>
+                            <!-- File Upload -->
+                            <div class="controls col-sm-8 ">
+                                {% if news.ttimg %}
+                                <img src="{{ news.ttimg }}" class="file-preview-image" id="preview"/>
+                                {% endif %}
+                                <input name="ttimg" value="{{ news.ttimg ? news.ttimg : "" }}" class="fileInput" id="fileInput" type="file"  placeholder="上传缩略图">
+                                <input name="imgpath" class="hidden" id="imgpath" type="text" value="{{ news.ttimg ? news.ttimg : "" }}">
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="summary" contenteditable="true">简介</label>
+                                <div class="col-sm-8">
+                                    <textarea name="summary" id="summary" class="form-control" placeholder="简介" rows="5" value="{{ news.summary ? news.summary : "" }}" ></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="dtcontent" contenteditable="true">详细内容</label>
+                                <div class="col-sm-8">
+
+                                    <textarea name="content" id="dtcontent" class="" placeholder="详细内容" rows="10" >{{ news.content ? news.content : "" }}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="author" contenteditable="true">作者</label>
+                                <div class="col-sm-8">
+                                    <input name="author" id="author" class="form-control" placeholder="作者" type="text" value="{{ news.author ? news.author : "" }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="seokeyword" contenteditable="true">SEO关键词</label>
+                                <div class="col-sm-8">
+                                    <input name="keywords" id="keyword" class="form-control" placeholder="SEO关键词" type="text" value="{{ news.keywords ? news.keywords : "" }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="seodescription" contenteditable="true">SEO描述</label>
+                                <div class="col-sm-8">
+                                    <input name="description" id="description" class="form-control" placeholder="SEO描述" type="text" value="{{ news.description ? news.description : "" }}">
+                                </div>
+                            </div>
+                    </div>
+                        <div class="form-group col-lg-8">
+                            <div class="controls  col-sm-offset-5">
+                                <button type="submit" class="btn btn-primary" contenteditable="true">确定</button>
+                            </div>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

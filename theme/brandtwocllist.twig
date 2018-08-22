@@ -1,0 +1,16 @@
+{% extends 'brand.twig' %}
+{% block pagecontent %}
+    <div id="contain" class="ppjs">
+        {% for key,list in lists %}
+            <a href="{{ special }}" target="_blank">
+                <dl>
+                    <dt><img src="{{ list.ttimg }}" /></dt>
+                    <dd>
+                        <h6>{{ list.title }}</h6>{{ list.description }}<br/>
+                        官方网站:{{ list.website }}
+                    </dd>
+                </dl>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

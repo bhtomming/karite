@@ -1,0 +1,10 @@
+.bg-success,.bg-danger{
+    padding: 15px;
+}
+.previewImg{
+    float: left;
+}
+.editImg{
+    overflow: hidden;
+    zoom: 1;
+}

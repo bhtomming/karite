@@ -1,0 +1,46 @@
+{% extends 'contact.twig' %}
+{% block pagecontent %}
+
+        <div class="con_top">
+            <span style="float:left">作者：{{ site.name }}</span>
+            <span style="float:right"></span>
+        </div>
+        <div class="con_nr zxly">
+            {% if message %}
+                <p class="{{ status }}">{{ message }}</p>
+            {% endif %}
+            <dl>
+                <dt>在线留言</dt>
+                <form name="words" method="post" action="/words/" >
+                    <input type="hidden" name="csrftoken" id="csrftoken" value="{{ token }}">
+                    <dd>
+                        <div class="t1">
+                            <b>*</b>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：
+                        </div>
+                        <div class="t2"><input name="name" type="text" placeholder="请输入您的姓名"/></div>
+                    </dd>
+                    <dd>
+                        <div class="t1"><b>*</b>联系电话： </div>
+                        <div class="t2">
+                            <input name="tel" type="text" placeholder="请输入您的常用手机号码"/>
+                        </div>
+                    </dd>
+                    <dd>
+                        <div class="t1"><b>*</b>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址： </div>
+                        <div class="t2">
+                            <input name="address" type="text" placeholder="请输入您的联系地址"/>
+                        </div>
+                    </dd>
+                    <dd class="txt">
+                        <textarea name="content" cols="" rows="" placeholder="请输入您的留言内容，我们将会在24小时内联系到您！"></textarea>
+                    </dd>
+                    <dd style="border:0">
+                        <input type="submit" name="button" id="button" value="提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交" class="tj"/ />
+                    </dd>
+                </form>
+            </dl>
+        </div>
+        <div class="con_bot">
+        </div>
+
+{% endblock %}

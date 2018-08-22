@@ -1,0 +1,39 @@
+{% extends 'brand.twig' %}
+{% block headjsorcss %}
+    <link rel="stylesheet" type="text/css" href="/js/fancybox/fancybox.css" />
+    <script type="text/javascript" src="/js/fancybox/jquery.js"></script>
+    <script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            for(i=0;i<$('#contain dl dt').length;i++){
+                $("a[rel=miguo"+i+"]").fancybox({
+                    'titlePosition' : 'over',
+                    'cyclic'        : true,
+                    'titleFormat'	: function(title, currentArray, currentIndex, currentOpts) {
+                        return '<span id="fancybox-title-over">' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                    }
+                });
+            }
+        });
+
+    </script>
+{% endblock %}
+{% block pagecontent %}
+
+    <div id="contain" class="ppzs">
+        {% for key,list in lists %}
+            <dl>
+                <dt>
+                    {% for imgindex,imgpath in list.ttimg %}
+                    <a href="{{ imgpath }}" rel="miguo{{ key }}" {% if imgindex!=0 %}style="display:none;"{% endif %}><img src="{{ imgpath }}" width="245" height="200" /></a>
+                   {% endfor %}
+                </dt>
+                <dd>
+                    <h6>{{ list.title }}</h6>
+                    {{ list.description }} </dd>
+            </dl>
+        {% endfor %}
+    </div>
+{% endblock %}
+

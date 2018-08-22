@@ -1,0 +1,127 @@
+{% extends 'admin/base.twig' %}
+{% block content %}
+<div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        管理报表 <small>网站状态报表</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li class="active">
+                            <i class="fa fa-dashboard"></i> 报表
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x "></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ news }}</div>
+                                    <div>新闻中心</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/admin/news">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详情</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ huodong }}</div>
+                                    <div>品牌活动</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/admin/activity">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详情</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-shopping-cart fa-5x "></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ anli }}</div>
+                                    <div>成功案例</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/admin/sucase">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详情</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-support fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ liuyan }}</div>
+                                    <div>在线留言</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/admin/words">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详情</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <div class="idadress"></div>
+        </div>
+        <!-- /.container-fluid -->
+</div>
+{% endblock %}
+{% block customjs  %}
+    <script type=text/javascript src=http://fw.qq.com/ipaddress></script>
+    <script type=text/javascript>
+        //document.write(IPData.join(""));
+        $(".idadress").innerHTML(IPData.join(""));
+    </script>
+
+{% endblock %}
+

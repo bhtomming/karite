@@ -1,0 +1,80 @@
+{% extends 'admin/ueditorbase.twig' %}
+{% block content %}
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        {{ pagename }}
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="/admin">管理首页</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-list"></i> <a href="/admin/{{ page }}" >文章列表</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-edit"></i>添加文章
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- Page Heading -->
+            <div class="row">
+                <form name="article" class="form-horizontal" action="{{ action }}" method="post">
+                    <div class="col-lg-8 col-lg-offset-2">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="title" contenteditable="true">品牌名称</label>
+                                <div class="col-sm-8">
+                                    <input name="title" id="title" class="form-control" placeholder="品牌名称" type="text" value="{{ brand.title ? brand.title : "" }}">
+                                </div>
+                            </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">品牌图片</label>
+                            <!-- File Upload -->
+                            <div class="controls col-sm-8 ">
+                                {% if brand.ttimg %}
+                                <img src="{{ brand.ttimg }}" class="file-preview-image" id="preview"/>
+                                {% endif %}
+                                <input name="ttimg" value="{{ brand.ttimg ? brand.ttimg : "" }}" class="fileInput" id="fileInput" type="file"  placeholder="上传缩略图">
+                                <input name="imgpath" class="hidden" id="imgpath" type="text" value="{{ brand.ttimg ? brand.ttimg : "" }}">
+                                <p class="help-block">建议图片大小为373*134</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="seodescription" contenteditable="true">品牌描述</label>
+                            <div class="col-sm-8 textarea">
+                                <textarea name="description" type="textarea" rows="5" class="form-control" > {{ brand.description ? brand.description : "" }}</textarea>
+                                <p class="help-block">使用简短的语言描述加盟的品牌</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="special" contenteditable="true">品牌专题</label>
+                            <div class="col-sm-8">
+                                <input name="special" id="special" class="form-control" placeholder="品牌专题" type="text" value="{{ news.special ? news.special : "" }}">
+                                <p class="help-block">填写品牌专题的链接地址，可以使用绝对地址(以http://开头)，也可以使用相对地址。</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="website" contenteditable="true">官网网址</label>
+                            <div class="col-sm-8">
+                                <input name="website" id="website" class="form-control" placeholder="官网网址" type="text" value="{{ news.website ? news.website : "" }}">
+                                <p class="help-block">仅写域名，不需要http://</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group col-lg-8">
+                            <div class="controls  col-sm-offset-5">
+                                <button type="submit" class="btn btn-primary" contenteditable="true">确定</button>
+                            </div>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

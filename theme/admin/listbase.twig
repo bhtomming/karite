@@ -1,0 +1,27 @@
+{% extends 'admin/base.twig' %}
+{% block breadnav %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                {{ pagename }}内容管理
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-dashboard"></i>  <a href="/admin">管理首页</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-list"></i> {{ pagename }}列表
+                </li>
+                <li class="active">
+                    <i class="fa fa-edit"></i><a href="/admin/{{ page }}/add" >添加{{ pagename }}</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    {% if message %}
+        <p class="{{ status }}">{{ message }}</p>
+    {% endif %}
+{% endblock %}
+{% block customjs  %}
+    <script src="/js/opation.js"></script>
+{% endblock %}

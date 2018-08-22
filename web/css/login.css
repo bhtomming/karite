@@ -1,0 +1,9 @@
+body{
+    background-color:#0099CC;
+}
+
+.login{
+    max-width:333px;
+    margin: 0 auto;
+    padding:15px;
+}

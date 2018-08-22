@@ -1,0 +1,39 @@
+{% extends 'admin/listbase.twig' %}
+{% block content %}
+            <!-- Page Heading -->
+
+            <div class="row">
+                <table class="table table-striped" contenteditable="true">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>品牌名称</th>
+                        <th>品牌相册</th>
+                        <th>品牌描述</th>
+                        <th>发布时间</th>
+                        <th>最后修改</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      {% for row, brand  in brandlist %}
+                    <tr>
+                        <td>{{ brand.id }}</td>
+                        <td>{{ brand.title }}</td>
+                        <td><img src="{{ brand.ttimg.0 }}" width="60" height="60" /></td>
+                        <td>{{ brand.description }}</td>
+                        <td>{{ brand.createtime }}</td>
+                        <td>{{ brand.mdtime }}</td>
+                        <td>
+                            <button class="btn btn-info view" data-id="{{ brand.id }}" type="button">查看</button>
+                            <button class="btn btn-reddit edit" data-id="{{ brand.id }}" type="button">修改</button>
+                            <button class="btn btn-danger del" data-id="{{ brand.id }}" type="button">删除</button>
+                        </td>
+                    </tr>
+                     {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+
+{% endblock %}

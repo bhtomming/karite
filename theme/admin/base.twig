@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ site.name }}_DPCMS后台管理界面</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/baseinfo.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+
+    {% block head %}
+    {% endblock %}
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">顶部导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/admin">DPCMS后台管理</a>
+        </div>
+        <!-- Top Menu Items -->
+        <ul class="nav navbar-right top-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>当前用户名 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/admin/user/edit/{{ userid }}"><i class="fa fa-fw fa-gear"></i> 设置</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="/admin/user/logout"><i class="fa fa-fw fa-power-off"></i> 退出</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li class="active">
+                    <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> 管理界面</a>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> 网站设置 <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo" class="collapse">
+                        <li>
+                            <a href="/admin/site">基本设置</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#content"><i class="fa fa-fw fa-edit"></i> 企业介绍<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="content" class="collapse">
+                        <li>
+                            <a href="/admin/news">新闻中心</a>
+                        </li>
+                        <li>
+                            <a href="/admin/profile">企业简介</a>
+                        </li>
+                        <li>
+                            <a href="/admin/depart">职能部门</a>
+                        </li>
+                        <li>
+                            <a href="/admin/dot">网点分布</a>
+                        </li>
+                        <li>
+                            <a href="/admin/history">发展历程</a>
+                        </li>
+                        <li>
+                            <a href="/admin/video">企业视频</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#brand"><i class="fa fa-fw fa-desktop"></i> 品牌中心<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="brand" class="collapse">
+                        <li>
+                            <a href="/admin/brand">品牌介绍</a>
+                        </li>
+                        <li>
+                            <a href="/admin/activity">品牌活动</a>
+                        </li>
+                        <li>
+                            <a href="/admin/show">品牌展示</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#join"><i class="fa fa-fw fa-plug"></i> 加盟中心<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="join" class="collapse">
+                        <li>
+                            <a href="/admin/sucase">成功案例</a>
+                        </li>
+                        <li>
+                            <a href="/admin/hzcenter">会展中心</a>
+                        </li>
+                        <li>
+                            <a href="/admin/notice">加盟须知</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#aboutus"><i class="fa fa-fw fa-wrench"></i> 联系我们<i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="aboutus" class="collapse">
+                        <li>
+                            <a href="/admin/contact">办公地点</a>
+                        </li>
+                        <li>
+                            <a href="/admin/words">留言咨询</a>
+                        </li>
+                        <li>
+                            <a href="/admin/recruit">社会招聘</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+    <!--管理界面的主要内容开始-->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            {% block breadnav %}
+            {% endblock %}
+            {% block content %}
+            {% endblock  %}
+        </div>
+    </div>
+    <!--管理界面的主要内容开始-->
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+
+
+{% block customjs  %}
+{% endblock %}
+
+</body>
+
+</html>

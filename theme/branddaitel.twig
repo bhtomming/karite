@@ -1,0 +1,19 @@
+{% extends 'brand.twig' %}
+{% block pagecontent %}
+    <div id="contain">
+    <div class="con_top">
+        <span style="float:left">作者:{{ item.author }}</span>
+        <span style="float:right"></span>
+    </div>
+    <div class="con_nr">
+
+            <dt>{{ item.title }}</dt>
+            {% autoescape true%}
+                {{ item.content|raw }}
+            {% endautoescape %}
+
+
+    </div>
+    <div class="con_bot"></div>
+    </div>
+{% endblock %}

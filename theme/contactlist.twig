@@ -1,0 +1,13 @@
+{% extends 'contact.twig' %}
+{% block pagecontent %}
+
+        {% for key,list in lists %}
+            <dl>
+                <dt><img width="160" height="95" src="{{ list.ttimg }}"/></dt>
+                <dd><a href="node/{{ list.id }}" target="_blank"><h6>{{ list.title }}</h6></a> {{ list.summary }}
+                </dd>
+                <span>{{ list.createtime }}</span>
+            </dl>
+        {% endfor %}
+
+{% endblock %}

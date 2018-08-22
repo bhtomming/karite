@@ -1,0 +1,61 @@
+{% extends 'admin/base.twig' %}
+{% block content %}
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    上传设置
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-dashboard"></i>  <a href="/admin">管理首页</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-edit"></i> 上传设置
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="imgtype" class="col-sm-1 control-label">上传图片设置</label>
+                        <label for="imgtype" class="col-sm-1 control-label">允许上传类型</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="imgtype" placeholder="jpg,jpeg,gif,png">
+                        </div>
+
+                        <label for="imgmax" class="col-sm-1 control-label">最大限制</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="imgmax" placeholder="3074">
+                        </div>
+                        <label for="imgmax" class="">KB</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="filetype" class="col-sm-1 control-label">上传文件设置</label>
+                        <label for="filetype" class="col-sm-1 control-label">允许上传类型</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="filetype" placeholder="zip,gz,rar,iso,xsl,doc,ppt,wps">
+                        </div>
+
+                        <label for="filemax" class="col-sm-1 control-label">最大限制</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="filemax" placeholder="10240">
+                        </div>
+                        <label for="filemax" class="">KB</label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

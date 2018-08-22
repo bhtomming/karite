@@ -1,0 +1,38 @@
+{% extends 'Layer.twig' %}
+{% block content %}
+    <div id="container" class="zym">
+        <div class="banner lxwm" style=" height:400px"></div>
+        <div class="main">
+            <div class="nav_zym">
+                <ul>
+                    <h2><img src="/images/lxwm_05.jpg" width="205" height="200" /></h2>
+                    <li><a href="/contact/">
+                            {% if page=="contact" %}
+                                <img src="/images/lxwm_bgdd_h.jpg" width="100" height="120" />
+                            {% else %}
+                                <img src="/images/lxwm_bgdd.jpg" width="100" height="120" />
+                            {% endif %}
+                        </a></li>
+                    <li><a href="/words/">
+                            {% if page=="words" %}
+                                <img src="/images/lxwm_lyzx_h.jpg" width="100" height="120" />
+                            {% else %}
+                                <img src="/images/lxwm_lyzx.jpg" width="100" height="120" />
+                            {% endif %}
+                        </a></li>
+                    <li><a href="/recruit/">
+                            {% if page=="recruit" %}
+                                <img src="/images/lxwm_shzp_h.jpg" width="100" height="120" />
+                            {% else %}
+                                <img src="/images/lxwm_shzp.jpg" width="100" height="120" />
+                            {% endif %}
+                        </a></li>
+                </ul>
+            </div>
+            <div id="contain" class="{{ lists ? "news":"" }}">
+                {% block pagecontent %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

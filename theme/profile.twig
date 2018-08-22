@@ -1,0 +1,66 @@
+{% extends 'Layer.twig' %}
+{% block content %}
+<div id="container" class="zym">
+    <div class="banner qyn" style=" height:400px"></div>
+    <div class="main">
+        <div class="nav_zym">
+            <ul>
+                <h2><img src="/images/qyn_mu.jpg" width="205" height="200" /></h2>
+                <li><a href="/news/">
+                        {% if page=="news" %}
+                            <img src="/images/qyn_xwzx_h.jpg" width="100" height="120" />
+                        {% else %}
+                            <img src="/images/qyn_xwzx.jpg" width="100" height="120" />
+                        {% endif %}
+                    </a>
+                </li>
+                <li><a href="/profile/">
+                        {% if page=="profile" %}
+                            <img src="/images/qyn_qyjj_h.jpg" width="100" height="120" />
+                        {% else %}
+                            <img src="/images/qyn_qyjj.jpg" width="100" height="120" />
+                        {% endif %}
+                    </a></li>
+                <li><a href="/depart/">
+                        {% if page=="depart" %}
+                            <img src="/images/qyn_bmzn_h.jpg" width="100" height="120" />
+                        {% else %}
+                            <img src="/images/qyn_bmzn.jpg" width="100" height="120" />
+                        {% endif %}
+                    </a></li>
+                <li><a href="/dot/">
+                        {% if page=="dot" %}
+                            <img src="/images/qyn_wdfb_h.jpg" width="100" height="120" />
+                        {% else %}
+                            <img src="/images/qyn_wdfb.jpg" width="100" height="120" />
+                        {% endif %}
+                    </a></li>
+                <li><a href="/history/">
+                        {% if page=="history" %}
+                            <img src="/images/qyn_fzlc_h.jpg" width="100" height="120" />
+                        {% else %}
+                            <img src="/images/qyn_fzlc.jpg" width="100" height="120" />
+                        {% endif %}
+                    </a></li>
+                <li>
+                    <a href="/video/">
+                        {% if page=="video" %}
+                            <img src="/images/qyn_qysp_h.jpg" width="100" height="120" />
+                        {% else %}
+                            <img src="/images/qyn_qysp.jpg" width="100" height="120" />
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="contain" class="{{ lists ? 'news':'' }}">
+            {% block pagecontent %}
+            {% endblock %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block dzjs %}
+
+{% endblock %}

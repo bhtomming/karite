@@ -1,0 +1,23 @@
+.message{width:242px;height:px;background-color:#FFF;z-index:99;font-size:12px}
+.message1{float:left;width:250px;height:40px;font-size:12px}
+.message2{float:left;font-size:12px;width:242px;height:329px;overflow:hidden;background-image:url(http://qyn.qianxian.info/gg/0/nn.jpg);padding:50px 10px 0 10px;overflow:hidden;background-repeat:no-repeat}
+.mse1{float:left;height:60px;padding:0 10px 0 0;font-size:12px}
+.mse1 span{margin:0 0}
+.mse1 p{display:inline;line-height:20px;padding-right:10px;color:#000}
+.mse2{float:left;height:250px;font-size:12px}
+.mse3{float:left;height:25px;font-size:12px}
+.subbutton{background:url(http://qyn.qianxian.info/gg/0/n22.jpg);border:none;width:100px;height:34px;cursor:pointer;}
+*{margin:0;padding:0}
+table,td,th,tr{font-size:12px}
+#cssrain{float:right;position:fixed;right:0;bottom:55px;height:400px;width:250px;padding:0;margin:5px;z-index:99;font-size:12px}
+.font12{font-size:12px}
+.kuang{width:160px;height:40px;font-size:12px;border:1px #abadb3 solid;color:#7f7f7f;line-height:20px;text-align:left}
+.close{width:240px;height:20px;float:left;font-size:12px}
+.MessageBtn{float:right;position:fixed;right:0;bottom:75px;height:115px;width:40px;padding:0;margin:5px;z-index:99;font-size:12px}
+
+p#vtip{position:absolute;padding:10px;left:5px;font-size:.8em;background-color:#fff;border:1px solid #a6c9e2;-moz-border-radius:5px;-webkit-border-radius:5px;z-index:99999;font-size:12px}
+p#vtip #vtipArrow{position:absolute;top:-10px;left:5px}
+.input_validation-failed{border:2px solid red;color:red;float:left}
+input{border:1px solid #ABADB3;}
+span.error{height:20px;width:20px;padding-left:10px;background:url(http://qyn.qianxian.info/order/easyvalidator/ICON_20.png);background-repeat:no-repeat;background-position:0 -20px;margin-left:0;float:right}
+span.corect{height:20px;width:20px;padding-left:10px;background:url(http://qyn.qianxian.info/order/easyvalidator/ICON_20.png);background-repeat:no-repeat;background-position:0 0;margin-left:0;float:right}

@@ -1,0 +1,100 @@
+{% extends 'admin/base.twig' %}
+{% block content %}
+    <div id="page-wrapper">
+
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    基本设置
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-dashboard"></i>  <a href="index.html">管理首页</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-edit"></i> 基本设置
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="control-group">
+                        <!-- Text input-->
+                        <label class="control-label" for="input01">网站名称:</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入您的网站名称" class="form-control">
+                            <p class="help-block">可以写中文</p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Text input-->
+                        <label class="control-label" for="input01">网站域名:</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入您的网站域名" class="form-control">
+                            <p class="help-block">不需要写http://,直接写www.xxx.com就可以</p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Text input-->
+                        <label class="control-label" for="input01">附件地址:</label>
+                        <div class="controls">
+                            <input type="text" placeholder="/d/file/" class="form-control">
+                            <p class="help-block">这里的地址是相对网站路径的，以“/”开头</p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Text input-->
+                        <label class="control-label" for="input01">管理邮箱:</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入管理员的邮箱号" class="form-control">
+                            <p class="help-block">正确的邮箱号包含@字符</p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Text input-->
+                        <label class="control-label" for="input01">关键词:</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入网站关键词" class="form-control">
+                            <p class="help-block">关键词是别人在搜索您的网站时进行匹配</p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Textarea -->
+                        <label class="control-label">网站描述:</label>
+                        <div class="controls">
+                            <div class="textarea">
+                                <textarea type="textarea" rows="5" class="form-control"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Text input-->
+                        <label class="control-label" for="input01">备案号:</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入备案信息" class="form-control">
+                            <p class="help-block">已经备案的请输入您的备案号</p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <button type="submit" class="btn btn-primary">保存</button>
+                    </div>
+
+                </fieldset>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

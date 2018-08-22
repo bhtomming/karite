@@ -1,0 +1,15 @@
+{% extends 'contact.twig' %}
+{% block pagecontent %}
+    <div class="con_top">
+        <span style="float:left">作者:{{ item.author }}</span>
+        <span style="float:right"></span>
+    </div>
+    <div class="con_nr">
+        <dl>
+            <dt>{{ item.title }}</dt>
+            {{ item.content }}
+        </dl>
+    </div>
+    <div class="con_bot">
+    </div>
+{% endblock %}

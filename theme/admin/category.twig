@@ -1,0 +1,64 @@
+{% extends 'admin/base.twig' %}
+{% block content %}
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        分类设置
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="/admin">管理首页</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-list"></i> 分类列表
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-edit"></i> <a href="/admin/category/add" >添加分类</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- Page Heading -->
+            <div class="row">
+
+                <table class="table table-striped" contenteditable="true">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>分类名称</th>
+                        <th>分类别名</th>
+                        <th>分类描述</th>
+                        <th>SEO标题</th>
+                        <th>SEO关键词</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {%  for row,category in categorys %}
+                    <tr>
+                        <td>{{ category.id }}</td>
+                        <td>{{ category.ename }}</td>
+                        <td>{{ category.name }}</td>
+                        <td>{{ category.description }}</td>
+                        <td>{{ category.seotitle }}</td>
+                        <td>{{ category.seokeyword }}</td>
+                        <td>
+                            <button class="btn btn-info view" data-id="{{ category.id }}" type="button">查看</button>
+                            <button  class="btn btn-reddit edit" data-id="{{ category.id }}" type="button">修改</button>
+                            <button class="btn btn-danger del" data-id="{{ category.id }}" type="button">删除</button>
+                        </td>
+                    </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block customjs  %}
+    <script src="/js/opation.js"></script>
+{% endblock %}

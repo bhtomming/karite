@@ -1,0 +1,17 @@
+{% extends 'sucase.twig' %}
+{% block pagecontent %}
+    <div class="con_top">
+        <span style="float:left">作者:{{ item.author }}</span>
+        <span style="float:right"></span>
+    </div>
+    <div {% if page=="notice" %}class="jm_nr"{% else %}class="con_nr" {% endif %}>
+        <dl>
+            <dt>{{ item.title }}</dt>
+            {% autoescape true%}
+                {{ item.content|raw }}
+            {% endautoescape %}
+        </dl>
+    </div>
+    <div class="con_bot">
+    </div>
+{% endblock %}
