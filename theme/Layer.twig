@@ -1,48 +1,98 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>{{ site.name }}|{{ site.keywords }}</title>
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="{{ site.keywords }}">
-    <link href="/css/index.css" rel="stylesheet" type="text/css" />
-    {% block headjsorcss %}
+    {% block stylesheet %}
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/animate.min.css">
+        <link rel="stylesheet" href="/css/app.css">
     {% endblock %}
-
 </head>
 <body>
-<div id="header">
-    <h1 style="display:none">
-        <a href="" title="{{ site.name }}|{{ site.keywords }}">{{ site.name }}{{ site.keywords }}</a></h1>
-    <div id="navigation">
-        <div class="logo">
+{% block nav %}
+<header id="index-header" class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-brand">
             {% if site.logo %}
-                <p><img src="{{ site.logo }}" width="270" height="60"/></p>
+                <img src="{{ site.logo }}" class="img-responsive"/>
             {% endif %}
         </div>
-        <ul>
-            <ul>
-                <li {% if page=="" %} class="nav_in"{% endif %}><a href="/">首页</a></li>
-                <li {% if page=="profile" %} class="nav_in"{% endif %}><a href="/profile/">可瑞特</a></li>
-                <li {% if page=="brand" %} class="nav_in"{% endif %}><a href="/brand/">品牌中心</a></li>
-                <li {% if page=="sucase" %} class="nav_in"{% endif %}><a href="/sucase/">加盟中心</a></li>
-                <li {% if page=="contact" %} class="nav_in"{% endif %}><a href="/contact/">联系我们</a></li>
-            </ul>
+        <ul class="nav navbar-nav">
+            <li  class="nav-items"><a href="/" class="navbar-link"></a></li>
+            <li  class="nav-items"><a href="#dou-pu"  class="navbar-link"></a></li>
+            <li  class="nav-items"><a href="#brand"  class="navbar-link"></a></li>
+            <li  class="nav-items"><a href="#men-dian"  class="navbar-link"></a></li>
+            <li  class="nav-items"><a href="#join"  class="navbar-link"></a></li>
+            <li  class="nav-items"><a href="#weibo"  class="navbar-link" tabindex="2"  data-toggle="modal"  data-target="#weibo-modal"></a></li>
+            <li  class="nav-items"><a href="#wechat"  class="navbar-link" tabindex="2"  data-toggle="modal" data-target="#wechat-modal"></a></li>
+            <li  class="nav-items"><a href="#"  class="navbar-link"></a></li>
         </ul>
     </div>
-</div>
+</header>
+{% endblock %}
 {% block content %}
 {% endblock %}
 <div id="footer">
-    <div id="copyright">
-        <a href="http://{{ site.domain }}" title="{{ site.name }}">
-            Copyright c {{ site.copyright }} | 客户专线：{{ site.tel }} | 备案号：{{ site.beian }}
-        </a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-lg-offset-1">
+                <ul class="copy-info">
+                    <li>{{ site.description }}</li>
+                    <li>{{ site.copyright }}: {{ site.domain }}</li>
+                </ul>
+                <div class="text-center ew-img">
+                    <img src="/images/sm_wechat.png" width="150" href="176" />
+                    <img src="/images/sm_weibo.png" width="150" href="176"  />
+                </div>
+            </div>
+            <div class="col-md-5 bq-container">
+                <div class="dj-bq"><img src="/images/dj_bq.png" alt="" class="img-responsive"></div>
+            </div>
+        </div>
     </div>
 </div>
-
-{% block dzjs %}
-
+<div id="weibo-modal" class="modal fade" role="dialog" aria-labelledby="weibo-modal-label">
+    <div class="modal-dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-title">扫描微博二维码到手机</div>
+            </div>
+            <div class="modal-body">
+                <img src="/images/dj_weibo.jpg" alt="" class="img-responsive center-block">
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+<div id="wechat-modal" class="modal fade" role="dialog" aria-labelledby="wechat-modal-label">
+    <div class="modal-dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-title">扫描微信二维码到手机</div>
+            </div>
+            <div class="modal-body">
+                <img src="/images/dj_wechat.jpg" alt="" class="img-responsive center-block">
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+{% block javascript %}
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/wow.js"></script>
+    <script>
+		if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+			new WOW().init();
+		};
+    </script>
 {% endblock %}
 </body>
 </html>
