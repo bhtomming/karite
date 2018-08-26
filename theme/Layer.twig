@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>{{ site.name }}|{{ site.keywords }}</title>
+    <title>{{ site.name }}</title>
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="{{ site.keywords }}">
     {% block stylesheet %}
@@ -15,23 +16,30 @@
 </head>
 <body>
 {% block nav %}
-<header id="index-header" class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-        <div class="navbar-brand">
-            {% if site.logo %}
-                <img src="{{ site.logo }}" class="img-responsive"/>
-            {% endif %}
+<header id="index-header">
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dp-nav" aria-expanded="false">
+                    <span class="sr-only">跳转菜单</span>
+                    显示完整菜单
+                </button>
+                <a class="navbar-brand hidden-sm" href="#">NATURALBEANS</a>
+            </div>
+            <div class="collapse navbar-collapse" id="dp-nav">
+                {#<div class="navbar-brand">NATURALBEANS</div>#}
+                <ul class="nav navbar-nav center-block">
+                    <li  class="nav-items"><a href="/" class="navbar-link">豆仆</a></li>
+                    <li  class="nav-items"><a href="#dou-pu"  class="navbar-link">关于豆仆</a></li>
+                    <li  class="nav-items"><a href="#brand"  class="navbar-link">品牌中心</a></li>
+                    <li  class="nav-items"><a href="#men-dian"  class="navbar-link">所有门店</a></li>
+                    <li  class="nav-items"><a href="#join"  class="navbar-link">加盟中心</a></li>
+                    <li  class="nav-items visible-lg"><a href="#weibo"  class="navbar-link" tabindex="2"  data-toggle="modal"  data-target="#weibo-modal"><img src="/images/nav_6.png" alt="" class="img-responsive"/></a></li>
+                    <li  class="nav-items visible-lg"><a href="#wechat"  class="navbar-link" tabindex="2"  data-toggle="modal" data-target="#wechat-modal"><img src="/images/nav_7.png" alt="" class="img-responsive"/></a></li>
+                    <li  class="nav-items visible-lg"><a href="#"  class="navbar-link"><img src="/images/nav_8.png" alt="" class="img-responsive"/></a></li>
+                </ul>
+            </div>
         </div>
-        <ul class="nav navbar-nav">
-            <li  class="nav-items"><a href="/" class="navbar-link"></a></li>
-            <li  class="nav-items"><a href="#dou-pu"  class="navbar-link"></a></li>
-            <li  class="nav-items"><a href="#brand"  class="navbar-link"></a></li>
-            <li  class="nav-items"><a href="#men-dian"  class="navbar-link"></a></li>
-            <li  class="nav-items"><a href="#join"  class="navbar-link"></a></li>
-            <li  class="nav-items"><a href="#weibo"  class="navbar-link" tabindex="2"  data-toggle="modal"  data-target="#weibo-modal"></a></li>
-            <li  class="nav-items"><a href="#wechat"  class="navbar-link" tabindex="2"  data-toggle="modal" data-target="#wechat-modal"></a></li>
-            <li  class="nav-items"><a href="#"  class="navbar-link"></a></li>
-        </ul>
     </div>
 </header>
 {% endblock %}
@@ -40,18 +48,22 @@
 <div id="footer">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 col-lg-offset-1">
+            <div class="col-xs-8 col-sm-8">
                 <ul class="copy-info">
                     <li>{{ site.description }}</li>
                     <li>{{ site.copyright }}: {{ site.domain }}</li>
                 </ul>
-                <div class="text-center ew-img">
-                    <img src="/images/sm_wechat.png" width="150" href="176" />
-                    <img src="/images/sm_weibo.png" width="150" href="176"  />
+                <div class="ew-img">
+                    <div class="ewm pull-left">
+                        <img src="/images/sm_wechat.png"  class="img-responsive center-block"/>
+                    </div>
+                    <div class="ewm pull-left">
+                        <img src="/images/sm_weibo.png"  class="img-responsive center-block"/>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-5 bq-container">
-                <div class="dj-bq"><img src="/images/dj_bq.png" alt="" class="img-responsive"></div>
+            <div class="col-xs-4 col-sm-4 bq-container">
+                <div class="dj-bq"><img src="/images/dj_bq.png" alt="" class="img-responsive pull-right"></div>
             </div>
         </div>
     </div>
