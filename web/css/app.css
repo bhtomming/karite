@@ -9,6 +9,10 @@ body{
     color:#fff;
     font-size: 2.6rem;
 }
+#index-header .container-fluid{
+    max-width: 1260px;
+    margin: 0 auto;
+}
 #index-header .container{
     min-width: 1260px;
 }
@@ -20,7 +24,7 @@ body{
     border-radius: inherit;
 }
 .navbar-brand{
-    font-size: 2.6rem;
+    font-size: 1em;
     color:#fff;
     height: 76px;
     line-height: 46px;
@@ -52,48 +56,56 @@ body{
     position: absolute;
 }
 .dj{
-    background: url("../images/dj_4.png") center no-repeat;
+    /*background: url("../images/dj_4.png") center no-repeat;
     background-size: contain;
     width: 273px;
-    height: 355px;
-    top: 164px;
-    left: 228px;
+    height: 355px;*/
+    width: 40.2%;
+    left: 32.98%;
+    z-index: 2;
 }
 .zhima{
-    background: url("../images/dj_5.png") center no-repeat;
+    /*background: url("../images/dj_5.png") center no-repeat;
     background-size: contain;
     width: 292px;
-    height: 182px;
-    top: 395px;
-    left: 430px;
+    height: 182px;*/
+    width: 43%;
+    top: 44.24%;
+    left: 63.03%;
+    z-index: 4;
 }
 .mangua{
-    background: url("../images/dj_6.png") center no-repeat;
+    /*background: url("../images/dj_6.png") center no-repeat;
     background-size: contain;
-    width: 281px;
-    height: 214px;
-    top: 346px;
+    max-width: 281px;
+    height: 214px;*/
+    width: 41.3%;
+    top: 33.9%;
     left: 2px;
+    z-index: 3;
 }
 .dj-bg{
     background: url("../images/dj_3.jpg") bottom left no-repeat;
     background-size: contain;
-    max-width: 678px;
-    margin: 0 auto;
-    height: 677px;
+    /*width: 679px;
+    height: 513px;*/
+    width: 95.7%;
+    max-width: 679px;
+    margin: 130px auto 0;
+    /*height: 677px;*/
     position: relative;
 }
 .waw{
-    width: 353px;
+    /*width: 353px;
     height: 28px;
     background: url("../images/dj_1.jpg") bottom no-repeat;
-    background-size: contain;
+    background-size: contain;*/
     margin-top: 130px;
 }
 .waw-content{
-    background: url("../images/dj_2.png") center no-repeat;
-    background-size: contain;
-    height: 502px;
+    /*background: url("../images/dj_2.png") center no-repeat;
+    background-size: contain;*/
+    max-height: 502px;
     max-width: 596px;
     margin-top: 55px;
 }
@@ -371,9 +383,10 @@ body{
 }
 .copy-info{
     margin: 80px auto;
-    font-size: 2.5rem;
+    font-size: 1.6em;
     padding-left: 14.27%;
     padding-right: 10%;
+    line-height: 2em;
 }
 .copy-info li{
     margin-bottom: 25px;
@@ -462,4 +475,13 @@ body{
         margin-left: 15.18%;
     }
 }
+@media (max-width:  435px) {
+    .navbar-brand{
+        font-size: 0.6em;
+    }
+    .copy-info{
+        font-size: 0.8em;
+    }
+}
+
 
