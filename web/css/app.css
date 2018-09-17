@@ -24,12 +24,16 @@ body{
     border-radius: inherit;
 }
 .navbar-brand{
-    font-size: 1em;
+    font-size: .9em;
     color:#fff;
-    height: 76px;
+    height: 46px;
     line-height: 46px;
+    padding: 0 5px;
 }
 .nav-items{  }
+.nav>li>a{
+    padding: 4px 15px;
+}
 .navbar-nav>li>a{
     line-height: 46px;
 }
@@ -40,7 +44,7 @@ body{
     width: 100%;
     height: 100%;
     color: #fff;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 .navbar-toggle{
     border-color: #ddd;
